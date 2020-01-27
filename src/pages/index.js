@@ -1,32 +1,46 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import styled from 'styled-components';
 import Masonry from 'react-masonry-component'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
 
+
+//////////////  Custome Components //////////////
+import VideoBanner from '../components/video-banner'
+import Portfolio from '../components/portfolio'
+import AboutMe from '../components/about-me'
+import SkillUniverse from '../components/skill-universe'
+
+import "../styles/custome/config.sass"
+
+///////////////////////////////////////////////
+
+//////////////  Styled Components //////////////
+const Container = styled.div `
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header header  header header"
+    "video video video video"
+    "portfolio portfolio portfolio portfolio"
+    "aboutMe aboutMe aboutMe skillUniverse"
+    "footer footer footer footer";
+`
+
 const IndexPage = ({ data }) => (
-  <Layout>
-    <Masonry className="showcase">
-      {data.allDatoCmsWork.edges.map(({ node: work }) => (
-        <div key={work.id} className="showcase__item">
-          <figure className="card">
-            <Link to={`/works/${work.slug}`} className="card__image">
-              <Img fluid={work.coverImage.fluid} />
-            </Link>
-            <figcaption className="card__caption">
-              <h6 className="card__title">
-                <Link to={`/works/${work.slug}`}>{work.title}</Link>
-              </h6>
-              <div className="card__description">
-                <p>{work.excerpt}</p>
-              </div>
-            </figcaption>
-          </figure>
-        </div>
-      ))}
-    </Masonry>
-  </Layout>
+  <Container>
+    <Layout>
+      <VideoBanner></VideoBanner>
+      <Portfolio></Portfolio>
+      <AboutMe></AboutMe>
+      <SkillUniverse></SkillUniverse>
+    </Layout>
+  </Container>
 )
+///////////////////////////////////////////////
+
 
 export default IndexPage
 
