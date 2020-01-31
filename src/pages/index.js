@@ -12,6 +12,7 @@ import Portfolio from '../components/portfolio'
 import AboutMe from '../components/about-me'
 import SkillUniverse from '../components/skill-universe'
 
+
 import "../styles/custome/config.sass"
 
 ///////////////////////////////////////////////
@@ -45,7 +46,7 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const query = graphql`
-  query IndexQuery {
+  query indexQueryAndIndexQuery  {
     allDatoCmsWork(sort: { fields: [position], order: ASC }) {
       edges {
         node {

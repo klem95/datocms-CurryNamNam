@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
+import Card from './card'
 
 const Container = styled.div `
     grid-area: portfolio;
-    background-color: yellow;
 `
 
 const Portfolio = (props) => {

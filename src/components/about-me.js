@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const Container = styled.div `
     grid-area: aboutMe;
-    background-color: purple;
 `
 
 const AboutMe = (props) => {
