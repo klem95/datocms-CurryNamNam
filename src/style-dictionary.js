@@ -1,7 +1,7 @@
 export const FontSizes = {
-    navMenu: '70px',
-    h3: '20px',
-    h4: '12px'
+    navMenu: '100px',
+    h3: '26px',
+    h4: '16px'
   };
 
 export const fontFamilies = {

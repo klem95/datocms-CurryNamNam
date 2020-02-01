@@ -22,21 +22,13 @@ const Content = styled.div `
     grid-template-columns: 40px 300px auto 40px;
     grid-template-rows: 40px 230px auto 40px;
 
-    background-image: url(${coverImg}), url(${s}) ;
+    background-image: url(${coverImg}) ;
     background-size:cover;
 
 `
 
-const FakeContent = styled.div ` 
-     position: absolute;
-    background-color: grey;
-    width: 100%;
-    height: 100%;
-    background-image: url(${s}) ;
-    background-size:cover;
-    clip-path: inset(275px 45px 45px 365px);
 
-`
+
 
 const NavUl = styled.ul `
     grid-column-start: 2;
@@ -113,6 +105,7 @@ const UlSoMe = styled.ul `
 const LiSoMe = styled.li `
     margin-bottom: 10px;
 `
+/*
 const AnimationZone = styled.div ` 
     grid-column-start: 3;
     grid-column-end: 4;
@@ -125,9 +118,26 @@ const AnimationZone = styled.div `
     border-color: #fff;
     border-width: 5px;
 
-    margin-left: 20px;
+    margin-left: 100px;
     box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
 
+`
+*/
+
+const AnimationZone = styled.div ` 
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    position: relative;
+`
+
+const Stick = styled.div ` 
+    width: 20px;
+    height: 120px;
+
+    background-color: white;
 `
 
 const VideoBanner = (props) => {
@@ -153,9 +163,7 @@ const VideoBanner = (props) => {
                         <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
                     </UlSoMe>
                 </SocialMedia>
-                <AnimationZone>
-                </AnimationZone>
-                <FakeContent></FakeContent>
+        
             </Content>
         </Container>
     )
