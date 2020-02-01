@@ -14,7 +14,7 @@ const Container = styled.div `
 const Ul = styled.ul `
     list-style-type: none;
     position: relative;
-    font-family: ${styleDict.fontFamilies.capitol};
+    font-family: ${styleDict.fontFamilies.Capitol};
     font-size: ${styleDict.FontSizes.navMenu};  
     font-weight: 600;
     font-style: normal;
@@ -37,9 +37,7 @@ const Header = (props) => {
         <>
             <Container>
                 <Ul>
-                    <Li>Home</Li>
-                    <Li>About</Li>
-                    <Li>Contact</Li>
+                    
                 </Ul>
             </Container>
         </>

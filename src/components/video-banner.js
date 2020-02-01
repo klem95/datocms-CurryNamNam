@@ -18,57 +18,104 @@ const Content = styled.div `
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 40px 50px auto 50px 70px;
-    grid-template-rows: 25% auto 25%;
+    grid-template-columns: 40px 300px auto 40px;
+    grid-template-rows: 40px 230px auto 40px;
 
     background-image: url(${coverImg});
     background-repeat: no-repeat;
     background-size: cover;
     
 `
-
-const RightCenterSticker = styled.div`     
-    grid-column-start: 5;
-    grid-column-end: 6;
+const NavUl = styled.ul `
+    grid-column-start: 2;
+    grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    list-style-type: none;
+    position: relative;
+    font-family: ${styleDict.fontFamilies.Capitol};
+    font-size: ${styleDict.FontSizes.navMenu};  
+    font-weight: 600;
+    font-style: normal;
+    color: ${styleDict.fontColors.coverImg};
+
+    margin: 0px;
+    padding: 0px;
+`
+
+const Li = styled.li `
+    
+    
+    transition: 1s;
+    &:hover {
+        color: red; 
+    }
 
 `
 
-const VBText = styled.h3 `
-    letter-spacing: 5px;
+
+const LeftStikkerCenterSticker = styled.div`     
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    margin-top: auto;
+
+`
+
+const MainText = styled.h2 `
     color: ${styleDict.fontColors.coverImg};;
     font-size: ${styleDict.FontSizes.h3};
-    font-family: ${styleDict.fontFamilies.RalewayExtraLight};
+    font-family: ${styleDict.fontFamilies.RalewayExtraBold};
+    font-weight: 800;
+    font-style: normal;
     white-space: nowrap;
-    border-bottom: 1px solid #ffffff ;
-    padding-bottom: 3px;
-    transform: rotate(-90deg);
-    text-align: center;
+
+    margin-bottom: 0px;
+    
+`
+const SubText = styled(MainText) ` 
+     font-size: ${styleDict.FontSizes.h4};
+     margin-top: 5px;
 `
 
 const SocialMedia = styled.div ` 
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
 
     display:flex; 
-    align-items: center;
-    margin: auto;
-    padding-top: 10px;
+    margin-left: auto;
+   
+    
 `
 const UlSoMe = styled.ul ` 
      list-style-type: none;
      padding: 0px;
+     margin: 0px;
+     
      
 `
 const LiSoMe = styled.li `
     margin-bottom: 10px;
+`
+const AnimationZone = styled.div ` 
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    
+    border-style: solid;
+    border-color: #fff;
+    border-width: 3px;
+
+
+    margin-left: 20px;
+    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
 `
 
 
@@ -81,9 +128,16 @@ const VideoBanner = (props) => {
     return(
         <Container>
             <Content>
-                <RightCenterSticker>
-                    <VBText>CurryNamNam Production</VBText>
-                </RightCenterSticker>
+                <NavUl>
+                    <Li>Home</Li>
+                    <Li>About</Li>
+                    <Li>Contact</Li>
+                </NavUl>
+                <LeftStikkerCenterSticker>
+                    <MainText>CurryNamNam // Production</MainText>
+                    <SubText>Created By // Sune Øllgaard Klem</SubText>
+                    <SubText>Tech // Developer</SubText>
+                </LeftStikkerCenterSticker>
                 <SocialMedia>
                     <UlSoMe>
                         <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
@@ -92,6 +146,7 @@ const VideoBanner = (props) => {
                         <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
                     </UlSoMe>
                 </SocialMedia>
+                <AnimationZone></AnimationZone>
             </Content>
         </Container>
     )
