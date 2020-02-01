@@ -14,8 +14,8 @@ export const fontFamilies = {
 }
 
   export const zIndex = {
-    videoBanner: -1,
-    header: 0
+    videoBanner: 0,
+    header: 100
   }
 
   export const fontColors = {

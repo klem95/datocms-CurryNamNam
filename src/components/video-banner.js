@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import * as styleDict from '../style-dictionary'
 import coverImg from '../images/coverImg.png';
+import s from '../images/s.png';
+
 import SoMeIcon from '../components/social-media-icon'
 
 const Container = styled.div `
@@ -9,7 +11,6 @@ const Container = styled.div `
     grid-area: video;
     height: 90vh;
     padding: 20px;
-    z-index: ${styleDict.zIndex.videoBanner};
     
 `
 const Content = styled.div ` 
@@ -21,11 +22,22 @@ const Content = styled.div `
     grid-template-columns: 40px 300px auto 40px;
     grid-template-rows: 40px 230px auto 40px;
 
-    background-image: url(${coverImg});
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+    background-image: url(${coverImg}), url(${s}) ;
+    background-size:cover;
+
 `
+
+const FakeContent = styled.div ` 
+     position: absolute;
+    background-color: grey;
+    width: 100%;
+    height: 100%;
+    background-image: url(${s}) ;
+    background-size:cover;
+    clip-path: inset(275px 45px 45px 365px);
+
+`
+
 const NavUl = styled.ul `
     grid-column-start: 2;
     grid-column-end: 3;
@@ -42,19 +54,18 @@ const NavUl = styled.ul `
 
     margin: 0px;
     padding: 0px;
+
 `
 
 const Li = styled.li `
-    
-    
-    transition: 1s;
+    z-index: ${styleDict.zIndex.header};
+    width: 100px;
+    transition: 0.3s;
     &:hover {
-        color: red; 
+        color: grey; 
     }
 
 `
-
-
 const LeftStikkerCenterSticker = styled.div`     
     grid-column-start: 2;
     grid-column-end: 3;
@@ -108,20 +119,16 @@ const AnimationZone = styled.div `
     grid-row-start: 3;
     grid-row-end: 4;
 
+    position: relative;
     
     border-style: solid;
     border-color: #fff;
-    border-width: 3px;
-
+    border-width: 5px;
 
     margin-left: 20px;
     box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
+
 `
-
-
-
-
-
 
 const VideoBanner = (props) => {
     
@@ -129,7 +136,7 @@ const VideoBanner = (props) => {
         <Container>
             <Content>
                 <NavUl>
-                    <Li>Home</Li>
+                    <Li>Projects</Li>
                     <Li>About</Li>
                     <Li>Contact</Li>
                 </NavUl>
@@ -146,7 +153,9 @@ const VideoBanner = (props) => {
                         <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
                     </UlSoMe>
                 </SocialMedia>
-                <AnimationZone></AnimationZone>
+                <AnimationZone>
+                </AnimationZone>
+                <FakeContent></FakeContent>
             </Content>
         </Container>
     )
