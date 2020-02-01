@@ -1,12 +1,13 @@
 export const FontSizes = {
-    navMenu: '40px',
+    navMenu: '70px',
     h3: '18px'
   };
 
 export const fontFamilies = {
     ConcertOne: "ConcertOne",
     Inconsolata: "Inconsolata",
-    RalewayExtraLight: "Raleway-ExtraLight"
+    RalewayExtraLight: "Raleway-ExtraLight",
+    capitol: "capitol, sans-serif"
 }
 
   export const zIndex = {

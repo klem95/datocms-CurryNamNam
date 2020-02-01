@@ -51,8 +51,6 @@ const VBText = styled.h3 `
     text-align: center;
 `
 
-
-
 const SocialMedia = styled.div ` 
     grid-column-start: 5;
     grid-column-end: 6;
@@ -61,7 +59,22 @@ const SocialMedia = styled.div `
 
     display:flex; 
     align-items: center;
+    margin: auto;
+    padding-top: 10px;
 `
+const UlSoMe = styled.ul ` 
+     list-style-type: none;
+     padding: 0px;
+     
+`
+const LiSoMe = styled.li `
+    margin-bottom: 10px;
+`
+
+
+
+
+
 
 const VideoBanner = (props) => {
     
@@ -72,9 +85,12 @@ const VideoBanner = (props) => {
                     <VBText>CurryNamNam Production</VBText>
                 </RightCenterSticker>
                 <SocialMedia>
-                    <ul>
-                        <li><SoMeIcon></SoMeIcon></li>
-                    </ul>
+                    <UlSoMe>
+                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
+                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
+                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
+                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
+                    </UlSoMe>
                 </SocialMedia>
             </Content>
         </Container>

@@ -14,15 +14,16 @@ const Container = styled.div `
 const Ul = styled.ul `
     list-style-type: none;
     position: relative;
-    font-family: ${styleDict.fontFamilies.RalewayExtraLight};
+    font-family: ${styleDict.fontFamilies.capitol};
     font-size: ${styleDict.FontSizes.navMenu};  
-    letter-spacing: 3px;
+    font-weight: 600;
+    font-style: normal;
     color: ${styleDict.fontColors.coverImg};
-    margin-left: 20px;
+    letter-spacing: 3px;
+    margin-top: 40px;
 `
 
 const Li = styled.li `
-    margin-bottom: 10px;
 
     transition: 1s;
     &:hover {
