@@ -22,9 +22,7 @@ const Container = styled.div `
         
     }
 
-    ${ReadMore}:active & {
-        padding: 10%;
-    }
+
 
 `
 
