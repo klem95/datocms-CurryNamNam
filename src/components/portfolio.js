@@ -15,19 +15,22 @@ const Container = styled.div `
 
 const Grid = styled.div` 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    grid-gap: 10px;
-    grid-auto-rows:  minmax(180px, auto);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 5px;
+    grid-auto-rows:  minmax(250px, auto);
     grid-auto-flow: dense;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    background: #CCCA; 
+
 `
 
 const Title = styled.div ` 
     display: flex; 
     justify-content: flex-end;
     padding-left: auto;
+    margin-bottom: 20px;
 `
 
 const Box = styled.div ` 
@@ -38,8 +41,9 @@ const Box = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 20px;
+
+    border-radius: 3px;
 
 `
 const Text = styled.h2 ` 
@@ -61,6 +65,13 @@ const Portfolio = (props) => {
         <Container>
             <Title><Box><Text>Projects</Text></Box></Title>
             <Grid> 
+                <Card size = "1"></Card>
+                <Card></Card>
+                <Card size = "2"></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
                 <Card></Card>
                 <Card></Card>
                 <Card></Card>

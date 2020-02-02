@@ -103,7 +103,7 @@ const MainText = styled.h2 `
     
 `
 const SubText = styled(MainText) ` 
-     font-size: ${styleDict.FontSizes.h4};
+     font-size: ${styleDict.FontSizes.p};
      margin-top: 5px;
 `
 
