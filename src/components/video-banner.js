@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 import * as styleDict from '../style-dictionary'
-import coverImg from '../images/coverImg.png';
-import s from '../images/s.png';
+import coverImg from '../images/redMar.png';
+import s from '../images/blueMar.png';
+import svg from '../images/Asset 6.svg';
+
 
 import SoMeIcon from '../components/social-media-icon'
 
@@ -11,6 +13,11 @@ const Container = styled.div `
     grid-area: video;
     height: 90vh;
     padding: 20px;
+
+    -webkit-box-shadow: 0px 7px 10px -4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 7px 10px -4px rgba(0,0,0,0.2);
+    box-shadow: 0px 7px 10px -4px rgba(0,0,0,0.2);
+
     
 `
 const Content = styled.div ` 
@@ -23,9 +30,25 @@ const Content = styled.div `
     grid-template-rows: 40px 230px auto 40px;
 
     background-image: url(${coverImg}) ;
+
     background-size:cover;
 
 `
+
+const Sticks = styled.div ` 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(${s}) ;
+    background-size:cover;
+   
+    mask: url(${svg})  ${props => props.posX} 350px;   
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+`
+
+
 
 
 
@@ -105,24 +128,6 @@ const UlSoMe = styled.ul `
 const LiSoMe = styled.li `
     margin-bottom: 10px;
 `
-/*
-const AnimationZone = styled.div ` 
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 3;
-    grid-row-end: 4;
-
-    position: relative;
-    
-    border-style: solid;
-    border-color: #fff;
-    border-width: 5px;
-
-    margin-left: 100px;
-    box-shadow: 10px 10px 20px 0px rgba(0,0,0,0.37);
-
-`
-*/
 
 const AnimationZone = styled.div ` 
     grid-column-start: 3;
@@ -144,7 +149,11 @@ const VideoBanner = (props) => {
     
     return(
         <Container>
+            
             <Content>
+
+            
+
                 <NavUl>
                     <Li>Projects</Li>
                     <Li>About</Li>
@@ -163,7 +172,7 @@ const VideoBanner = (props) => {
                         <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
                     </UlSoMe>
                 </SocialMedia>
-        
+            
             </Content>
         </Container>
     )
