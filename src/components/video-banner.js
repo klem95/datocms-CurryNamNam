@@ -30,8 +30,9 @@ const Content = styled.div `
     grid-template-rows: 40px 230px auto 40px;
 
     background-image: url(${coverImg}) ;
-
     background-size:cover;
+
+
 
 `
 
@@ -127,6 +128,7 @@ const UlSoMe = styled.ul `
 `
 const LiSoMe = styled.li `
     margin-bottom: 10px;
+    
 `
 
 const AnimationZone = styled.div ` 
@@ -147,6 +149,13 @@ const Stick = styled.div `
 
 const VideoBanner = (props) => {
     
+    let children = []
+
+    console.log( props.SoMeData.length);
+    for (let j = 0; j < props.SoMeData.length;j++) {
+        children.push(<LiSoMe><SoMeIcon  key={j} id={props.SoMeData[j].node.userid} img ={props.SoMeData[j].node.img.fluid.src}></SoMeIcon></LiSoMe>)
+      }
+
     return(
         <Container>
             
@@ -166,10 +175,7 @@ const VideoBanner = (props) => {
                 </LeftStikkerCenterSticker>
                 <SocialMedia>
                     <UlSoMe>
-                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
-                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
-                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
-                        <LiSoMe><SoMeIcon></SoMeIcon></LiSoMe>
+                        {children}
                     </UlSoMe>
                 </SocialMedia>
             

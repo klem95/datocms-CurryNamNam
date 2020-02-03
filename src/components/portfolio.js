@@ -43,7 +43,15 @@ const Box = styled.div `
     align-items: center;
     margin-bottom: 20px;
 
-    border-radius: 3px;
+    border-radius: 3px 0px 0px 3px;
+
+    transition: 2s;
+
+    &:hover {
+    filter: hue-rotate(90deg);
+
+    }
+
 
 `
 const Text = styled.h2 ` 
@@ -58,27 +66,23 @@ const Text = styled.h2 `
 
 `
 
-
 const Portfolio = (props) => {
-    
+    let children = []
+    for (let j = 0; j < props.thumbnailData.length; j++) {
+        children.push(<Card key={j}  size = "1" title={props.thumbnailData[j].node.title} tags= {props.thumbnailData[j].node.tags} img ={props.thumbnailData[j].node.thumbnail.fluid.src} ></Card>)
+      }
+
     return(
         <Container>
             <Title><Box><Text>Projects</Text></Box></Title>
             <Grid> 
-                <Card size = "1"></Card>
-                <Card></Card>
-                <Card size = "2"></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+                {children}
             </Grid>
         </Container>
+    
     )
 
 }
 
 export default Portfolio
+

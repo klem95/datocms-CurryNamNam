@@ -33,8 +33,8 @@ const Container = styled.div `
 const IndexPage = ({ data }) => (
   <Container>
     <Layout>
-      <VideoBanner></VideoBanner>
-      <Portfolio></Portfolio>
+      <VideoBanner SoMeData = {data.allDatoCmsSocialProfile.edges}></VideoBanner>
+      <Portfolio thumbnailData={data.allDatoCmsProject.edges}></Portfolio>
       <AboutMe></AboutMe>
       <SkillUniverse></SkillUniverse>
     </Layout>
@@ -46,21 +46,35 @@ const IndexPage = ({ data }) => (
 export default IndexPage
 
 export const query = graphql`
-  query indexQueryAndIndexQuery  {
-    allDatoCmsWork(sort: { fields: [position], order: ASC }) {
-      edges {
-        node {
-          id
-          title
-          slug
-          excerpt
-          coverImage {
-            fluid(maxWidth: 450, imgixParams: { fm: "jpg", auto: "compress" }) {
-              ...GatsbyDatoCmsSizes
-            }
+query data {
+  allDatoCmsProject {
+    edges {
+      node {
+        title
+        tags
+        thumbnail {
+          fluid {
+            src
           }
         }
       }
     }
   }
+  allDatoCmsSocialProfile {
+    edges {
+      node {
+        userid
+        url
+        img {
+          fluid(maxHeight: 25, maxWidth: 25) {
+            src
+          }
+        }
+      }
+    }
+  }
+}
+
+
 `
+

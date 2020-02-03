@@ -7,6 +7,7 @@ const Item =styled.div `
     display:flex;
     align-items: center;
     margin-bottom: 20px;
+    float: right
 `
 
 const Text = styled.p ` 
@@ -17,13 +18,19 @@ const Text = styled.p `
     font-family: ${styleDict.fontFamilies.RalewayExtraBold};
     font-weight: 800;
 `
+const SoMeImg = styled.img ` 
+    src: url(${props=> props.src});
+    width: 25px;
+    height: 25px;
+
+`
 
 
 const SoMeIcon = (props) => {
     return(
         <>
             <Item> 
-                <Text>[Something]</Text><img src={icon}/>
+                <Text>[{props.id}]</Text><SoMeImg src={props.img}/>
             </Item>
         </>
     )

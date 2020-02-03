@@ -28,7 +28,7 @@ const Container = styled.div `
 
 const BG = styled.div ` 
     position: relative;
-    background-image: url(${testImg}) ;
+    background-image:  url(${props => props.img});
     background-size: 100% 100%;
     border-radius: 5px;   
 
@@ -45,7 +45,8 @@ const HeaderText = styled.div `
     padding: 10px;
     margin-bottom: 5px;
     margin-top: 10px;
-    margin-left: 10px;
+  
+    border-radius: 0px 3px 3px 0px;
 `
 
 const Text = styled.h3`  
@@ -56,6 +57,7 @@ const Text = styled.h3`
     font-style: normal;
     color: ${styleDict.fontColors.coverImg};
     letter-spacing: 2px;
+
 `
 const ReadMore = styled.div  `
     position:absolute;
@@ -63,30 +65,25 @@ const ReadMore = styled.div  `
     margin-left: 10px;
     width: 0%;
     height: 15%;
-    background: rgba(100,100,100,0.3);
 
     transition: 0.3s;
     ${Container}:hover & {
         width: 20%;
     }
 
-    &:active {
-        background: red;
-    }
+
 
 `
-
-
 
 const Pin = styled.div  `
 
     width: 0%;
     height: 30%;
-    background-image: url(${blue});
+    background: white;
     background-size: 100px;
     margin-bottom: 2px;
-    transition: 0.5s;
-
+    transition: hue-rotate 1s;
+ 
 
     ${Container}:hover & {
         width: 100%;
@@ -112,6 +109,7 @@ const Tag = styled.h4`
 
     position: absolute;
     bottom: 10px;
+    margin-left: 10px;
 `
 
 
@@ -122,15 +120,15 @@ const Card = (props) => {
     return(
         <>
            <Container size={props.size}>
-              <BG>
-                <HeaderText><Text>Edith</Text></HeaderText>
+              <BG img = {props.img}>
+                <HeaderText><Text>{props.title}</Text></HeaderText>
                 <ReadMore>
                     <Pin></Pin>
                     <MeatPin></MeatPin>
                     <Pin></Pin>
                 </ReadMore>
-                <Tag>[ Unity // Philips Hue ]</Tag>
-         
+                <Tag>[{props.tags}]</Tag>
+        
               </BG>
            </Container>
         </>
