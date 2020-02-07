@@ -77,6 +77,7 @@ const Li = styled.li `
     z-index: ${styleDict.zIndex.header};
     width: 100px;
     transition: 0.3s;
+    cursor:pointer;
     &:hover {
         color: grey; 
     }
@@ -153,7 +154,7 @@ const VideoBanner = (props) => {
 
     console.log( props.SoMeData.length);
     for (let j = 0; j < props.SoMeData.length;j++) {
-        children.push(<LiSoMe><SoMeIcon  key={j} id={props.SoMeData[j].node.userid} img ={props.SoMeData[j].node.img.fluid.src}></SoMeIcon></LiSoMe>)
+        children.push(<LiSoMe key={j}><SoMeIcon  key={j} id={props.SoMeData[j].node.userid} img ={props.SoMeData[j].node.img.fluid.src}></SoMeIcon></LiSoMe>)
       }
 
     return(
