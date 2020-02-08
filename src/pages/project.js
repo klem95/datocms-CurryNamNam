@@ -41,16 +41,16 @@ const Description = styled.div `
 
 const projectPage = ({location}) => {
     
-    const some = location.state
+    const project = location.state
     return(
         <Layout>
             <Container>
                 <Header></Header>
-                <CoverVideo img= {some.img}>
-                    <Video videoSrcURL= {some.url}  videoTitle="Official Music Video on YouTube" ></Video>
+                <CoverVideo img= {project?.img}>
+                    <Video videoSrcURL= {project?.url}  videoTitle="Official Music Video on YouTube" ></Video>
                 </CoverVideo>
                 <Description>
-                    <h1>Hello {some.title}</h1>
+                    <h1>Hello {project?.title}</h1>
                     <p>Some shit</p>
                 </Description>
             </Container>
