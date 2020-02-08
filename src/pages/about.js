@@ -4,11 +4,13 @@ import { HelmetDatoCms } from 'gatsby-source-datocms'
 import Img from 'gatsby-image'
 import Layout from "../components/layout"
 
-const About = ({ data: { about } }) => (
+const About = ({ data: { about }, location}) => (
   <Layout>
     <article className="sheet">
+     
       <HelmetDatoCms seo={about.seoMetaTags} />
       <div className="sheet__inner">
+      <h1>weret {location.state.fromFeed}</h1>
         <h1 className="sheet__title">{about.title}</h1>
         <p className="sheet__lead">{about.subtitle}</p>
         <div className="sheet__gallery">

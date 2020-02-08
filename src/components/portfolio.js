@@ -69,7 +69,7 @@ const Text = styled.h2 `
 const Portfolio = (props) => {
     let children = []
     for (let j = 0; j < props.thumbnailData.length; j++) {
-        children.push(<Card key={j}  size = "1" title={props.thumbnailData[j].node.title} tags= {props.thumbnailData[j].node.tags} img ={props.thumbnailData[j].node.thumbnail.fluid.src} ></Card>)
+        children.push(<Card key={j} {...props.thumbnailData[j].node} ></Card>)
       }
 
     return(

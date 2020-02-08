@@ -6,6 +6,7 @@ const Container = styled.div `
     grid-area: header;
     position: absolute;   
     width: 100%;
+    height: 200px;
     display: flex;
     justify-content: left;
 

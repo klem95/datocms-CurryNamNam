@@ -4,6 +4,7 @@ import * as styleDict from '../style-dictionary'
 import testImg from '../images/projectTest.jpg';
 import bgImage from '../images/orangeMar.png';
 import blue from '../images/blueMar.png';
+import { Link } from 'gatsby'
 
 
 
@@ -120,13 +121,15 @@ const Card = (props) => {
     return(
         <>
            <Container size={props.size}>
-              <BG img = {props.img}>
+              <BG img = {props.thumbnail.fluid.src}>
                 <HeaderText><Text>{props.title}</Text></HeaderText>
-                <ReadMore>
-                    <Pin></Pin>
-                    <MeatPin></MeatPin>
-                    <Pin></Pin>
-                </ReadMore>
+                <Link  to="/project/"  state={props}>
+                    <ReadMore>
+                        <Pin></Pin>
+                        <MeatPin></MeatPin>
+                        <Pin></Pin>
+                    </ReadMore>
+                </Link>
                 <Tag>[{props.tags}]</Tag>
         
               </BG>

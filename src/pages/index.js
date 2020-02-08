@@ -35,7 +35,9 @@ const IndexPage = ({ data }) => (
     <Layout>
       <VideoBanner SoMeData = {data.allDatoCmsSocialProfile.edges}></VideoBanner>
       <Portfolio thumbnailData={data.allDatoCmsProject.edges}></Portfolio>
-      <AboutMe></AboutMe>
+      <AboutMe>
+        
+      </AboutMe>
       <SkillUniverse></SkillUniverse>
     </Layout>
   </Container>
@@ -57,6 +59,7 @@ query data {
             src
           }
         }
+        url
       }
     }
   }
