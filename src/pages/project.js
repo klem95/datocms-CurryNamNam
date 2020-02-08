@@ -42,7 +42,6 @@ const Description = styled.div `
 const projectPage = ({location}) => {
     
     const some = location.state
-    console.log(some.url)
     return(
         <Layout>
             <Container>
