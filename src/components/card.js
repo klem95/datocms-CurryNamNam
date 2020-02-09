@@ -17,33 +17,33 @@ const Container = styled.div `
     padding: 0px;  
 
     transition: 0.2s;
+    
 
     &:hover {
         padding: 5px;  
         
     }
 
-    
 
 
 `
 
 const BG = styled.div ` 
-    position: relative;
+   
     background-image:  url(${props => props.img});
-    background-size: 100% 100%;
-    border-radius: 5px;   
+    border-radius: 5px; 
 
-    width: 100%;
+    width: 100%;  
     height: 100%;
-    
-    transition: 1s;
 
-    filter:  ${props => props.active ? 'blur(0px)' : 'blur(2px)'};
-    -webkit-filter: ${props => props.active ? 'blur(0px)' : 'blur(2px)'};
+    transition: 0.7s;
+    background-size: ${props => props.active ? '100% 100%' : '140% 140%'};
+
+    filter:  ${props => props.active ? 'blur(0px)' : 'blur(5px)'};
+    -webkit-filter: ${props => props.active ? 'blur(0px)' : 'blur(5px)'};
 
 
-
+ 
     
     
     
@@ -131,7 +131,7 @@ const Tag = styled.h4`
 const Card = (props) => {
     return(
         <>
-           <Container size={props.size}>
+           <Container active={props.active} size={props.size}>
               <BG active={props.active} img = {props.thumbnail.fluid.src}>
                 <HeaderText><Text>{props.title}</Text></HeaderText>
                 <Link  to="/project/"  state={props}>

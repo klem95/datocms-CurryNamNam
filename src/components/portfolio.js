@@ -80,6 +80,7 @@ class Portfolio  extends React.Component {
         this.state = {
             cards: [],
             tags: [],
+            filterState:  ""
         };
 
     }
@@ -109,18 +110,25 @@ class Portfolio  extends React.Component {
     toogleMap = (val) => {
         let _cards = []
         console.log(val.value)
-
-        for (let j = 0; j < this.state.cards.length; j++) {
-            let status = false;
-            for (let i = 0; i <  this.state.cards[j].props.projecttags.tags.length; i++) {
-                if (val.target.value === this.state.cards[j].props.projecttags.tags[i]) {
-                    status = true;
-                } 
-            }
-            _cards.push(<Card active = {status} key={j} {...this.props.thumbnailData[j].node} ></Card>)
-        }
         
-        this.setState({ cards: _cards});
+        if (this.state.filterState === val.target.value) {
+            for (let j = 0; j < this.state.cards.length; j++) {
+                _cards.push(<Card active = {true} key={j} {...this.props.thumbnailData[j].node} ></Card>)
+            }
+
+        } else {
+            for (let j = 0; j < this.state.cards.length; j++) {
+                let status = false;
+                for (let i = 0; i <  this.state.cards[j].props.projecttags.tags.length; i++) {
+                    if (val.target.value === this.state.cards[j].props.projecttags.tags[i]) {
+                        status = true;
+                    } 
+                }
+                _cards.push(<Card active = {status} key={j} {...this.props.thumbnailData[j].node} ></Card>)
+            }
+            
+        }
+        this.setState({ cards: _cards, filterState: val.target.value});
         
     }
 

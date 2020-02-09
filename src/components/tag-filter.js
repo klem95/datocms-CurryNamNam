@@ -29,8 +29,8 @@ const Bg = styled.div `
     }
 
     :target {
-  color: blue;
-}
+        color: blue;
+    }
     
  `
 
