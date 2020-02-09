@@ -17,6 +17,8 @@ const Container = styled.div `
     padding: 0px;  
 
     transition: 0.2s;
+
+    
     
 
     &:hover {
@@ -30,6 +32,7 @@ const Container = styled.div `
 
 const BG = styled.div ` 
    
+    
     background-image:  url(${props => props.img});
     border-radius: 5px; 
 
@@ -50,15 +53,13 @@ const BG = styled.div `
 `
 
 const HeaderText = styled.div `  
-    position:absolute;
     width: 60%;
     height: auto;
     background:rgba(150,150,150,0.7);
     padding: 10px;
-    margin-bottom: 5px;
-    margin-top: 10px;
-  
     border-radius: 0px 3px 3px 0px;
+
+
 `
 
 const Text = styled.h3`  
@@ -72,11 +73,11 @@ const Text = styled.h3`
 
 `
 const ReadMore = styled.div  `
-    position:absolute;
-    margin-top: 65px;
-    margin-left: 10px;
+
     width: 0%;
     height: 15%;
+
+    margin: 5px;
 
     transition: 0.3s;
     ${Container}:hover & {
