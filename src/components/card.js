@@ -23,6 +23,7 @@ const Container = styled.div `
         
     }
 
+    
 
 
 `
@@ -34,10 +35,18 @@ const BG = styled.div `
     border-radius: 5px;   
 
     width: 100%;
+    height: 100%;
     
     transition: 1s;
-    height: ${props => props.active ? '100%' : '50%'};
- 
+
+    filter:  ${props => props.active ? 'blur(0px)' : 'blur(2px)'};
+    -webkit-filter: ${props => props.active ? 'blur(0px)' : 'blur(2px)'};
+
+
+
+    
+    
+    
 `
 
 const HeaderText = styled.div `  

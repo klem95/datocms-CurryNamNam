@@ -66,6 +66,13 @@ const Text = styled.h2 `
 
 `
 
+const TagContainer = styled.div`
+    display: inline-block;
+    width: 100%;
+
+
+` 
+
 class Portfolio  extends React.Component {
 
     constructor(props) {
@@ -101,6 +108,7 @@ class Portfolio  extends React.Component {
 
     toogleMap = (val) => {
         let _cards = []
+        console.log(val.value)
 
         for (let j = 0; j < this.state.cards.length; j++) {
             let status = false;
@@ -118,21 +126,15 @@ class Portfolio  extends React.Component {
 
 
     render() {
-
-        
-          console.log("RUN")
-
-
-          
         return (
-            <Container>
-                
-            <Title><Box><Text>Projects</Text></Box></Title>
-
-            {this.state.tags}
-            <Grid> 
-                {this.state.cards}
-            </Grid>
+            <Container>     
+                <Title><Box><Text>Projects</Text></Box></Title>
+                <TagContainer>
+                    {this.state.tags}
+                </TagContainer>
+                <Grid> 
+                    {this.state.cards}
+                </Grid>
             </Container>
         )
     }
