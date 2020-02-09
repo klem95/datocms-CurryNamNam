@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Card from './card'
 import bgImage from '../images/blueMar.png';
 import * as styleDict from '../style-dictionary'
-
+import TagFilter from '../components/tag-filter'
 
 
 const Container = styled.div `
@@ -66,21 +66,76 @@ const Text = styled.h2 `
 
 `
 
-const Portfolio = (props) => {
-    let children = []
-    for (let j = 0; j < props.thumbnailData.length; j++) {
-        children.push(<Card key={j} {...props.thumbnailData[j].node} ></Card>)
-      }
+class Portfolio  extends React.Component {
 
-    return(
-        <Container>
+    constructor(props) {
+        super(props);
+        this.state = {
+            cards: [],
+            tags: [],
+        };
+
+    }
+
+  
+    componentDidMount() {
+        let tempTags = []
+        let stringLog = []
+        let _cards = []
+
+        for (let j = 0; j < this.props.thumbnailData.length; j++) {
+            _cards.push(<Card active = {true} key={j} {...this.props.thumbnailData[j].node} ></Card>)
+            for (let i = 0; i <  this.props.thumbnailData[j].node.projecttags.tags.length; i++) {
+                if (!stringLog.includes(this.props.thumbnailData[j].node.projecttags?.tags[i]) && this.props.thumbnailData[j].node.projecttags?.tags[i] != undefined){
+                    tempTags.push(<TagFilter toogleMap = {this.toogleMap} key={Math.random()} data = {this.props.thumbnailData[j].node.projecttags?.tags[i]}></TagFilter>)
+                    stringLog.push(this.props.thumbnailData[j].node.projecttags?.tags[i])
+                }
+            }
+        }       
+        this.setState({ tags: tempTags, cards: _cards});
+    }
+
+    componentWillUnmount() {
+  
+    }
+
+    toogleMap = (val) => {
+        let _cards = []
+
+        for (let j = 0; j < this.state.cards.length; j++) {
+            let status = false;
+            for (let i = 0; i <  this.state.cards[j].props.projecttags.tags.length; i++) {
+                if (val.target.value === this.state.cards[j].props.projecttags.tags[i]) {
+                    status = true;
+                } 
+            }
+            _cards.push(<Card active = {status} key={j} {...this.props.thumbnailData[j].node} ></Card>)
+        }
+        
+        this.setState({ cards: _cards});
+        
+    }
+
+
+    render() {
+
+        
+          console.log("RUN")
+
+
+          
+        return (
+            <Container>
+                
             <Title><Box><Text>Projects</Text></Box></Title>
+
+            {this.state.tags}
             <Grid> 
-                {children}
+                {this.state.cards}
             </Grid>
-        </Container>
-    
-    )
+            </Container>
+        )
+    }
 
 }
 

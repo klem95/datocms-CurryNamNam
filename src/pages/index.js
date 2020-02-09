@@ -60,6 +60,7 @@ query data {
           }
         }
         url
+        projecttags
       }
     }
   }

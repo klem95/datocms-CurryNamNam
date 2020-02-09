@@ -34,7 +34,9 @@ const BG = styled.div `
     border-radius: 5px;   
 
     width: 100%;
-    height: 100%;
+    
+    transition: 1s;
+    height: ${props => props.active ? '100%' : '50%'};
  
 `
 
@@ -121,7 +123,7 @@ const Card = (props) => {
     return(
         <>
            <Container size={props.size}>
-              <BG img = {props.thumbnail.fluid.src}>
+              <BG active={props.active} img = {props.thumbnail.fluid.src}>
                 <HeaderText><Text>{props.title}</Text></HeaderText>
                 <Link  to="/project/"  state={props}>
                     <ReadMore>

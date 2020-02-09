@@ -30,6 +30,10 @@ const SoMeImg = styled.img `
 
     margin-left: 100px;
     
+    transition: 0.3s;
+    :hover {
+        padding-right: 2px;
+    }
 
 `
 

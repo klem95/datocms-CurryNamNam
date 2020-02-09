@@ -25,6 +25,10 @@ const CoverVideo = styled.div `
     margin: 20px;
     background-image:  url(${props => props.img});
     background-size: cover;
+    
+    -webkit-box-shadow: 0px 7px 10px -4px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 7px 10px -4px rgba(0,0,0,0.2);
+    box-shadow: 0px 7px 10px -4px rgba(0,0,0,0.2);
 
 `
 
